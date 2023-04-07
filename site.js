@@ -2,7 +2,8 @@ console.log('LOAD')
 const contentFrame = document.querySelector( 'iframe' );
 const contentHeader = document.querySelector( 'h1' );
 const checkbox = document.querySelector( 'input[type="checkbox"]' );
-
+const nextBtn = document.querySelector( '.button' );
+console.log( nextBtn );
 // checkbox.setAttribute( 'disabled', 'disabled' );
 checkbox.checked = false;
 
@@ -25,12 +26,23 @@ menuitems.forEach( ( menuitem, index ) => {
 			}
 		} );
 
+
+
+	if ( index < menuitems.length - 1 ) {
+		nextBtn.style.display = 'inline-block';
+		console.log( 'show next button' )
+	} else {
+		nextBtn.style.display = 'none';
+		console.log( 'hide next button' )
+	}
+
 		contentHeader.innerHTML = menuitem.innerHTML;
 		contentFrame.src = event.target.href;
 
 		// checkbox.setAttribute( 'disabled', 'disabled' );
 		checkbox.checked = false;
-		var button = document.body.getElementsByClassName('button')[0];
+		// var button = document.body.getElementsByClassName('button')[0];
+		var button = document.querySelector('.button');
   	button.disabled = true;
 
 	} );

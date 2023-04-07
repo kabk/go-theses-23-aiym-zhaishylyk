@@ -3,8 +3,8 @@ body {
   color: black;
   font-family: Times;
   font-size: 18pt;
-  margin-left: 100px;
-  margin-right: 100px;
+/*  margin-left: 100px;
+  margin-right: 100px;*/
 }
 
 .hidden{
@@ -14,22 +14,42 @@ body {
 h1 br { display: none }
 iframe {
   width: 1320px;
+  max-width: 100%;
   height: 450px;
   overflow-x: hidden;
 }  
 
 ul{
+  width: 1320px;
+  max-width: 100%;
+  height: 100px;
+  margin: 0 auto;
   list-style-type: none;
-  margin: 0;
+/*  margin: 0;*/
   padding: 0;
   overflow: hidden;
   background-color: white;
   outline:5px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x:auto;
+
+/*    -ms-overflow-style: none;
+  scrollbar-width: none;*/
+}
+ul::-webkit-scrollbar {
+  display: none;
 }
 
 li {
-  float: left;
+/*  float: left;*/
+
   border-right:1px solid #bbb;
+  border-bottom:1px solid #bbb;
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 li:last-child {
@@ -43,25 +63,30 @@ li:last-child {
   padding: 14px 16px;
   text-decoration: none;
 }
-
+center + div {
+  width: 1320px;
+  max-width: 100%;
+  margin: 0 auto;
+}
 input[disabled] + label,
 .disabled {
   color: rgb(0,0,0,.5);
   pointer-events: none;
 }
-.active {
+li:has(.active) {
   background-color: #0080ff;
 }
 .button {
-  border: none;
+/*  border: none;
   color: white;
   background-color: #0080ff;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+  display: inline-block;*/
+font-family: initial;
+  font-size: 18pt;
+/*  margin: 4px 2px;*/
   cursor: pointer;
   float: right;
 }
